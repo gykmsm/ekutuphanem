@@ -13,6 +13,13 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGO"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_gravity="center"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,5 +41,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:hint="register"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hesabın varsa KAydol"
+            android:layout_gravity="center"/>
     </LinearLayout>
 </RelativeLayout>
