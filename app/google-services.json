@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "723998963974",
+    "firebase_url": "https://ekutuphanem-8154b.firebaseio.com",
+    "project_id": "ekutuphanem-8154b",
+    "storage_bucket": "ekutuphanem-8154b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723998963974:android:4c67c48c4263a8d7",
+        "android_client_info": {
+          "package_name": "com.merveakgormus.ekutuphanem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723998963974-vb9tv8e9q1septv5l9i5nt8ae2igdi38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiynWZH-EnlQgCbdareU2kJvcHa-U-4oo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723998963974:android:a28265e81bde4180",
+        "android_client_info": {
+          "package_name": "com.merveakgormus.ekutuphanem_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723998963974-vb9tv8e9q1septv5l9i5nt8ae2igdi38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiynWZH-EnlQgCbdareU2kJvcHa-U-4oo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

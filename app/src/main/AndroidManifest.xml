@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".BucketActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

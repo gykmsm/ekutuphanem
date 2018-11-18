@@ -39,14 +39,12 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
+                android:layout_height="match_parent"
                 android:layout_below="@id/img_k">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:id="@+id/ll"
@@ -63,6 +61,7 @@
                             android:layout_weight="1">
 
                             <TextView
+                                android:id="@+id/tv_d_bookname"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/qbold"
@@ -77,6 +76,7 @@
                             android:gravity="right">
 
                             <TextView
+                                android:id="@+id/tv_d_author"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/qmedium"
@@ -92,7 +92,8 @@
                         android:layout_below="@id/ll"
                         android:layout_marginTop="16dp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="2"
+                        android:id="@+id/ss">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -100,13 +101,27 @@
                             android:layout_weight="1"
                             android:gravity="left">
 
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/qlight"
-                                android:text="$25.00"
-                                android:textSize="30sp" />
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/qlight"
+                                    android:text="$"
+                                    android:textSize="30sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_d_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/qlight"
+                                    android:text="25.00"
+                                    android:textSize="30sp" />
+                            </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -118,18 +133,34 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/qbold"
                                 android:text="SEPETE EKLE"
-                                android:textSize="22sp"
-                                android:textColor="@color/myOrange"/>
+                                android:textColor="@color/myOrange"
+                                android:textSize="22sp" />
                         </LinearLayout>
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ss"
+                        android:layout_marginTop="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_d_description"
+                            android:fontFamily="@font/qlight"/>
+                    </LinearLayout>
                 </RelativeLayout>
             </ScrollView>
 
 
         </RelativeLayout>
+
+
     </RelativeLayout>
 
-    <include layout="@layout/navigation_layout" android:visibility="gone" android:id="@+id/detail_menu"/>
+    <include
+        android:id="@+id/detail_menu"
+        layout="@layout/navigation_layout"
+        android:visibility="gone" />
 
 </RelativeLayout>

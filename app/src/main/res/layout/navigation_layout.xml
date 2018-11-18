@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:id="@+id/go_home"
                 android:padding="16dp">
 
                 <ImageView
@@ -46,7 +47,7 @@
                     android:alpha="0.6"
                     android:fontFamily="@font/qlight"
                     android:padding="4dp"
-                    android:text="Liste Görünümü"
+                    android:text="Ana sayfa"
                     android:textColor="#ffffff"
                     android:textSize="22sp" />
             </LinearLayout>
@@ -55,6 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:id="@+id/go_bucket"
                 android:padding="16dp">
 
                 <ImageView
@@ -79,7 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:id="@+id/go_profile">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -119,6 +122,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:alpha="0.6"
+                    android:id="@+id/img_logout"
                     android:src="@drawable/logout" />
             </LinearLayout>
 
@@ -126,7 +130,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="center"
+                android:id="@+id/go_settings">
 
                 <ImageView
                     android:layout_width="30dp"

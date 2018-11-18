@@ -12,4 +12,9 @@
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="edttheme" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/myOrange</item>
+        <item name="colorControlNormal">#7e7e7e</item>
+    </style>
+
 </resources>
