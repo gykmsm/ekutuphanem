@@ -6,38 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <include layout="@layout/navigation_layout"/>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGO"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="email"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="password"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Giriş"
-            android:layout_gravity="right"
-            android:id="@+id/btn_login"
-            android:onClick="onClick"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hesabın varsa Giriş yap"
-            android:layout_gravity="center"/>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@drawable/backgraund"
+        android:padding="16dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/editext_backgraund"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="LOGO"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:hint="E-mail"
+                android:background="#00000000"
+                android:fontFamily="@font/qmedium"
+                android:textStyle="italic"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:padding="16dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="#00000000"
+                android:fontFamily="@font/qmedium"
+                android:textStyle="italic"
+                android:maxEms="1"
+                android:imeOptions="actionDone"
+                android:hint="Şifre"
+                android:singleLine="true"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/circle_orange_button"
+                android:onClick="onClick"
+                android:text="GİRİŞ YAP"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/qbold"
+                android:text="Şifreni mi unuttun ?"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/qbold"
+            android:text="Hesabın yok mu ? Kayıt Ol"
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_goregister"
+            android:textSize="16dp" />
+    </RelativeLayout>
 </RelativeLayout>
