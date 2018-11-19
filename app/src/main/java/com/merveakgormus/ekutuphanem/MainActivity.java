@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
     TextView close;
 
     @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -74,18 +80,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, BucketActivity.class));
+                menu.setVisibility(View.GONE);
             }
         });
         go_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                menu.setVisibility(View.GONE);
             }
         });
         go_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                menu.setVisibility(View.GONE);
             }
         });
 
@@ -109,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds :dataSnapshot.getChildren())
+                for(final DataSnapshot ds :dataSnapshot.getChildren())
                 {
                     book = new Book(ds.child("bookname").getValue().toString(),ds.child("bookauthor").getValue().toString(),
                             Integer.parseInt(ds.child("pagenumber").getValue().toString()),
@@ -140,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                             bundle.putString("covertype", book.getCovertype());
                             bundle.putString("productdescription", book.getProductdescription());
                             bundle.putString("storageUrl", book.getStorageUrl());
-
+                            bundle.putString("book_id", ds.getKey());
                             Intent i = new Intent(MainActivity.this, DetailActivity.class);
                             i.putExtra("bundle" ,bundle);
                             startActivity(i);
@@ -199,5 +208,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void GetBooks(Book book){}
 }

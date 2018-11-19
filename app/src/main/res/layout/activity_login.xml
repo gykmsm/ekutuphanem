@@ -20,12 +20,11 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="LOGO"
-                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ekutuphanem"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:layout_width="match_parent"

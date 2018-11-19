@@ -4,12 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.merveakgormus.ekutuphanem.Model.Book;
 
 public class DetailActivity extends AppCompatActivity {
@@ -22,10 +27,19 @@ public class DetailActivity extends AppCompatActivity {
 
     LinearLayout go_home, go_settings, go_profile, go_bucket;
 
+    Button btn_add_bucket;
+
+    private DatabaseReference databaseReference ;
+    private FirebaseDatabase firebaseDatabase ;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
 
         go_home = (LinearLayout)findViewById(R.id.go_home);
         go_bucket = (LinearLayout)findViewById(R.id.go_bucket);
@@ -93,9 +107,9 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
-        Bundle bundle = getIntent().getBundleExtra("bundle");
+        final Bundle bundle = getIntent().getBundleExtra("bundle");
 
-        Book book = new Book(bundle.getString("bookname"),
+        final Book book = new Book(bundle.getString("bookname"),
                 bundle.getString("bookauthor"),bundle.getInt("pagenumber"),
                 bundle.getDouble("price"),bundle.getString("covertype"), bundle.getString("productdescription"),
                 bundle.getString("storageUrl"));
@@ -106,6 +120,18 @@ public class DetailActivity extends AppCompatActivity {
         tv_d_author.setText(book.getBookauthor());
         tv_d_description.setText(book.getProductdescription());
         tv_toolbar_name.setText(book.getBookname());
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Orders").child(firebaseUser.getUid());
+
+        btn_add_bucket = (Button) findViewById(R.id.btn_add_bucket);
+        btn_add_bucket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child(databaseReference.push().getKey()).setValue(book);
+                Toast.makeText(DetailActivity.this, "Ürün sepetinize eklenmiştir!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(DetailActivity.this, BucketActivity.class));
+            }
+        });
 
     }
 }

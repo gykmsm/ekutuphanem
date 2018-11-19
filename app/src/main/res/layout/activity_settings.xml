@@ -12,6 +12,7 @@
         android:layout_height="wrap_content" />
 
     <include layout="@layout/navigation_layout"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:id="@+id/menu"/>
 
 </RelativeLayout>

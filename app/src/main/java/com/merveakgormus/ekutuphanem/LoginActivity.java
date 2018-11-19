@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (mail != null && password != null) {
                         final User user = new User(edt_mail.getText().toString(), edt_password.getText().toString());
                         Login(user);
-                        finish();
+
                     }
                 } else
                     Toast.makeText(LoginActivity.this, "Lütfen boş bırakmayınız!", Toast.LENGTH_SHORT).show();
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         } else {
-
+                            Toast.makeText(LoginActivity.this, "Lütfen tekrar deneyiniz !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

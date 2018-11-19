@@ -62,7 +62,7 @@ public class SimpleRecyclerView extends RecyclerView.Adapter<SimpleRecyclerView.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tv_item_bookname.setText(mDataset.get(position).getBookname());
+        //holder.tv_item_bookname.setText(mDataset.get(position).getBookname());
         Picasso.with(context)
                 .load(R.drawable.k2)
                 .error(R.drawable.common_google_signin_btn_icon_dark)
